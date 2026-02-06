@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Grepflow Technologies Landing Page
+
+A modern, responsive, mobile-first landing page for Grepflow Technologies built with Next.js, Tailwind CSS, and Framer Motion.
+
+## Features
+
+- **Tech Stack**: Next.js 14+ (App Router), TypeScript, Tailwind CSS v4.
+- **Animations**: Smooth entrance animations using Framer Motion.
+- **Design System**: Custom "Deep Navy" and "Electric Blue" theme with Inter font.
+- **Components**: Reusable UI components (Button, Section, Container).
+- **Deployment**: Configured for GitHub Pages (Static Export).
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Node.js 18+ installed (Recommended 20+).
+- npm installed.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/grepflow-technologies.git
+   cd grepflow-technologies
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deployment to GitHub Pages
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+This project is configured for automated deployment via GitHub Actions.
 
-## Deploy on Vercel
+1. **Push to GitHub**:
+   ```bash
+   git add .
+   git commit -m "Initial commit"
+   git branch -M main
+   git remote add origin https://github.com/your-username/grepflow-technologies.git
+   git push -u origin main
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+2. **Configure Settings**:
+   - Go to repository **Settings** > **Pages**.
+   - Under "Build and deployment", select **GitHub Actions** as the source.
+   - The workflow "Deploy to GitHub Pages" will automatically pick up the build.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+3. **Verify**:
+   - Once the Action completes, your site will be live at `https://your-username.github.io/grepflow-technologies/`.
+
+## Project Structure
+
+- `app/`: Next.js App Router pages and layout.
+- `components/ui`: Generic UI components (Button, etc.).
+- `components/section`: Landing page sections (Hero, About, etc.).
+- `lib/`: Utility functions.
+
+## Updates
+
+- To change colors: Edit `app/globals.css`.
+- To update content: Edit the individual component files in `components/sections/`.
