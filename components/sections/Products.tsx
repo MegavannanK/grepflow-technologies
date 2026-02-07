@@ -11,22 +11,22 @@ const products = [
         title: "FlowAnalytics",
         description: "Real-time data visualization and business intelligence platform for enterprise.",
         icon: BarChart3,
-        color: "text-blue-500",
-        bg: "bg-blue-500/10"
+        color: "text-primary",
+        bg: "bg-primary/10"
     },
     {
         title: "SecureGuard",
         description: "Next-generation identity management and cybersecurity suit.",
         icon: ShieldCheck,
-        color: "text-indigo-500",
-        bg: "bg-indigo-500/10"
+        color: "text-accent",
+        bg: "bg-accent/10"
     },
     {
         title: "CloudSync",
         description: "Automated multi-cloud orchestration and resource optimization tool.",
         icon: CloudCog,
-        color: "text-cyan-500",
-        bg: "bg-cyan-500/10"
+        color: "text-primary",
+        bg: "bg-primary/10"
     }
 ]
 

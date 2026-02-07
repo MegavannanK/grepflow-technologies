@@ -6,31 +6,53 @@
 }
 
 @theme {
-  --font-sans: var(--font-inter); 
-  
+  --font-sans: var(--font-inter);
+
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  
-  --color-primary: #0f172a; /* Deep Navy */
+
+  /* Modern Tech Palette */
+  --color-primary: #4f46e5;
+  /* Indigo 600 - Vibrant & Professional */
   --color-primary-foreground: #ffffff;
-  
-  --color-accent: #3b82f6; /* Electric Blue */
+
+  --color-accent: #0ea5e9;
+  /* Sky 500 - Bright & catchy */
   --color-accent-foreground: #ffffff;
-  
-  --color-muted: #f1f5f9;
+
+  --color-muted: #f8fafc;
+  /* Slate 50 */
   --color-muted-foreground: #64748b;
-  
+  /* Slate 500 */
+
   --color-card: #ffffff;
   --color-card-foreground: #0f172a;
-  
-  --animate-accordion-down: accordion-down 0.2s ease-out;
-  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  --animate-scroll: scroll 40s linear infinite;
+
+  @keyframes scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #020617; /* Slate 950 */
-    --foreground: #f8fafc;
+    --background: #030712;
+    /* Gray 950 - Deep dark */
+    --foreground: #f9fafb;
+    /* Gray 50 */
+
+    --color-muted: #1e293b;
+    /* Slate 800 */
+    --color-muted-foreground: #94a3b8;
+    /* Slate 400 */
+
+    --color-card: #0f172a;
+    /* Slate 900 */
+    --color-card-foreground: #f8fafc;
+    /* Slate 50 */
   }
 }
 
@@ -46,6 +68,5 @@ body {
 @utility container {
   margin-inline: auto;
   padding-inline: 1rem;
-  max-width: 1280px; 
+  max-width: 1280px;
 }
-

@@ -4,16 +4,16 @@ import { Cpu, Github, Twitter, Linkedin } from "lucide-react"
 
 export function Footer() {
     return (
-        <footer className="bg-muted/30 border-t border-muted py-12 md:py-16">
+        <footer className="bg-[#020617] border-t border-white/5 py-12 md:py-16">
             <Container>
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
                     {/* Brand */}
                     <div className="col-span-1 md:col-span-1">
-                        <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight mb-4">
-                            <div className="bg-primary text-primary-foreground p-1.5 rounded-lg">
+                        <Link href="/" className="flex items-center gap-2 font-bold text-xl tracking-tight mb-4 group">
+                            <div className="bg-primary/10 text-primary p-2 rounded-xl group-hover:bg-primary group-hover:text-primary-foreground transition-colors duration-300">
                                 <Cpu className="w-5 h-5" />
                             </div>
-                            <span className="text-primary">Grepflow</span>
+                            <span className="text-foreground group-hover:text-primary transition-colors">Grepflow</span>
                         </Link>
                         <p className="text-muted-foreground text-sm leading-relaxed">
                             Empowering businesses with cutting-edge products and technology services. Building the future, today.
