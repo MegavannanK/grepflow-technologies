@@ -9,8 +9,11 @@ import Image from "next/image"
   Ideally, use SVGs for logos. 
   For now, we will use the provided logo image.
 */
+// Prefix path for GitHub Pages
+const basePath = process.env.NODE_ENV === 'production' ? '/grepflow-technologies' : '';
+
 const clients = [
-    { name: "MIB Industries", logo: "/images/mib-logo.jpg", width: 200, height: 100 },
+    { name: "MIB Industries", logo: `${basePath}/images/mib-logo.jpg`, width: 200, height: 100 },
     // Add more clients here
 ]
 
