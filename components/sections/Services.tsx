@@ -3,72 +3,93 @@
 import { Container } from "@/components/ui/Container"
 import { Section } from "@/components/ui/Section"
 import { motion } from "framer-motion"
-import { AppWindow, Smartphone, Cloud, BrainCircuit, RotateCw, Lightbulb } from "lucide-react"
+import {
+    RefreshCw, // App Modernization
+    Cloud, // Cloud Services
+    Bot, // Agentic AI
+    Workflow, // Workflow Digitization
+    Globe, // Web Development
+} from "lucide-react"
 
 const services = [
     {
-        title: "Web Development",
-        description: "Scalable, high-performance web applications built with modern frameworks like Next.js and React.",
-        icon: AppWindow,
+        icon: RefreshCw,
+        title: "Application Modernization",
+        description: "Transform legacy monoliths into scalable, resilient cloud-native architectures. We refactor and re-platform your core systems for the future."
     },
     {
-        title: "Mobile App Development",
-        description: "Native and cross-platform mobile solutions used by millions of users worldwide.",
-        icon: Smartphone,
-    },
-    {
-        title: "Cloud Solutions",
-        description: "Secure cloud migration, architecture design, and infrastructure management on AWS and Azure.",
         icon: Cloud,
+        title: "Cloud Services",
+        description: "Strategic migration and optimization for AWS, Azure, and Google Cloud. We ensure your infrastructure is secure, cost-effective, and highly available."
     },
     {
-        title: "AI & Machine Learning",
-        description: "Intelligent automation, predictive analytics, and natural language processing solutions.",
-        icon: BrainCircuit,
+        icon: Bot,
+        title: "Agentic AI Development",
+        description: "Build autonomous AI agents that understand context, execute complex tasks, and automate business logic to drive efficiency."
     },
     {
-        title: "DevOps & SRE",
-        description: "Streamlined CI/CD pipelines, containerization, and 24/7 site reliability engineering.",
-        icon: RotateCw,
+        icon: Workflow,
+        title: "Workflow Digitization",
+        description: "Streamline operations by converting manual, paper-based processes into intelligent digital workflows that reduce error and speed up delivery."
     },
     {
-        title: "Digital Consulting",
-        description: "Strategic technology roadmap planning and digital transformation consulting.",
-        icon: Lightbulb,
-    },
+        icon: Globe,
+        title: "Web Development",
+        description: "High-performance, SEO-optimized web applications built with Next.js and modern frameworks to expand your global digital footprint."
+    }
 ]
 
 export function Services() {
     return (
         <Section id="services" className="bg-muted/30">
             <Container>
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Technology Services</h2>
-                    <p className="text-muted-foreground text-lg">
-                        End-to-end technology services to power your digital transformation.
-                    </p>
+                <div className="text-center max-w-3xl mx-auto mb-12">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">Our Core Expertise</h2>
+                        <p className="text-muted-foreground text-lg leading-relaxed">
+                            End-to-end technology solutions tailored to modernize and scale your enterprise.
+                        </p>
+                    </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    variants={{
+                        hidden: {},
+                        visible: {
+                            transition: {
+                                staggerChildren: 0.1
+                            }
+                        }
+                    }}
+                    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+                >
                     {services.map((service, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="bg-background rounded-xl p-6 shadow-sm border border-muted hover:border-primary/50 transition-colors"
+                            variants={{
+                                hidden: { opacity: 0, y: 20 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } }
+                            }}
+                            className="bg-card border border-muted p-6 rounded-2xl hover:border-action/50 transition-all duration-300 group shadow-sm hover:shadow-xl hover:shadow-action/5 hover:-translate-y-1"
                         >
-                            <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 text-primary">
+                            <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mb-4 group-hover:bg-action group-hover:text-white transition-colors duration-300 text-primary">
                                 <service.icon className="w-6 h-6" />
                             </div>
-                            <h3 className="text-xl font-bold mb-2">{service.title}</h3>
-                            <p className="text-muted-foreground text-sm leading-relaxed">
+                            <h3 className="text-xl font-bold mb-3 group-hover:text-action transition-colors">{service.title}</h3>
+                            <p className="text-muted-foreground leading-relaxed text-sm">
                                 {service.description}
                             </p>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </Container>
         </Section>
     )

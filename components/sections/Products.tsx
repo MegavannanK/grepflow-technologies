@@ -32,40 +32,58 @@ const products = [
 
 export function Products() {
     return (
-        <Section id="products">
-            <Container>
-                <div className="text-center max-w-2xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-4">Our Products</h2>
-                    <p className="text-muted-foreground text-lg">
-                        Powerful, scalable software solutions designed to solve complex industry problems.
-                    </p>
+        <Section id="products" className="bg-background relative">
+            <div className="absolute inset-0 bg-gradient-to-b from-muted/20 to-transparent pointer-events-none" />
+
+            <Container className="relative z-10">
+                <div className="text-center max-w-3xl mx-auto mb-20">
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                    >
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">Enterprise-Ready Solutions</h2>
+                        <p className="text-muted-foreground text-xl leading-relaxed">
+                            Pre-built, scalable platforms designed to accelerate your digital transformation.
+                        </p>
+                    </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={{
+                        hidden: {},
+                        visible: { transition: { staggerChildren: 0.15 } }
+                    }}
+                    className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                >
                     {products.map((product, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group p-8 rounded-2xl border border-muted bg-card hover:shadow-lg hover:border-primary/20 transition-all duration-300"
+                            variants={{
+                                hidden: { opacity: 0, y: 30 },
+                                visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+                            }}
+                            className="group bg-card border border-muted p-10 rounded-3xl hover:border-primary/50 transition-all hover:shadow-2xl hover:shadow-primary/5 flex flex-col items-center text-center"
                         >
-                            <div className={`w-14 h-14 rounded-xl ${product.bg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                                <product.icon className={`w-7 h-7 ${product.color}`} />
+                            <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-8 ${product.bg} text-white shadow-lg`}>
+                                <product.icon className={`w-8 h-8 ${product.color}`} />
                             </div>
 
-                            <h3 className="text-xl font-bold mb-3">{product.title}</h3>
-                            <p className="text-muted-foreground mb-6 leading-relaxed">
+                            <h3 className="text-2xl font-bold mb-4">{product.title}</h3>
+                            <p className="text-muted-foreground mb-8 leading-relaxed text-base flex-grow">
                                 {product.description}
                             </p>
 
-                            <Button variant="ghost" className="p-0 h-auto font-semibold hover:bg-transparent hover:text-primary group-hover:translate-x-1 transition-transform">
-                                Learn more <ArrowRight className="ml-1 w-4 h-4" />
+                            <Button variant="outline" className="w-full border-muted-foreground/20 hover:border-primary/50 hover:bg-primary/5 hover:text-primary transition-all group-hover:scale-105">
+                                Learn More <ArrowRight className="ml-2 w-4 h-4" />
                             </Button>
                         </motion.div>
                     ))}
-                </div>
+                </motion.div>
             </Container>
         </Section>
     )

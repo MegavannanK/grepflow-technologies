@@ -57,23 +57,23 @@ export function Reviews() {
                     {reviews.map((review, index) => (
                         <div
                             key={index}
-                            className="w-[350px] md:w-[450px] flex-shrink-0 bg-background border border-muted-foreground/10 p-6 rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+                            className="w-[350px] md:w-[450px] flex-shrink-0 bg-card/50 backdrop-blur-sm border border-white/5 p-8 rounded-2xl shadow-sm hover:shadow-md hover:border-primary/20 transition-all"
                         >
-                            <div className="flex gap-1 mb-4 text-yellow-500">
+                            <div className="flex gap-1 mb-4 text-accent">
                                 {[...Array(review.stars)].map((_, i) => (
                                     <Star key={i} className="w-4 h-4 fill-current" />
                                 ))}
                             </div>
-                            <p className="text-foreground/80 mb-6 leading-relaxed italic">
+                            <p className="text-muted-foreground mb-6 leading-relaxed italic text-lg">
                                 "{review.content}"
                             </p>
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-sm">
+                                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-primary/20">
                                     {review.name.charAt(0)}
                                 </div>
                                 <div>
-                                    <div className="font-semibold text-sm">{review.name}</div>
-                                    <div className="text-xs text-muted-foreground">{review.role}</div>
+                                    <div className="font-semibold text-foreground">{review.name}</div>
+                                    <div className="text-xs text-muted-foreground font-medium uppercase tracking-wide">{review.role}</div>
                                 </div>
                             </div>
                         </div>

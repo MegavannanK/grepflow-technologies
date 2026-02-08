@@ -42,7 +42,7 @@ export function Clients() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="relative h-40 w-80 flex items-center justify-center"
+                            className="relative h-40 w-80 flex items-center justify-center p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-colors"
                         >
                             {/* 
                   Using unoptimized images for valid export if external, 
@@ -53,7 +53,7 @@ export function Clients() {
                                 alt={`${client.name} logo`}
                                 width={client.width}
                                 height={client.height}
-                                className="object-contain max-h-36 w-auto"
+                                className="object-contain max-h-24 w-auto opacity-70 hover:opacity-100 transition-opacity grayscale hover:grayscale-0 footer-logo-filter"
                             />
                         </motion.div>
                     ))}
