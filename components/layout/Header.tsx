@@ -89,7 +89,7 @@ export function Header() {
                         initial={{ opacity: 0, y: -20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: -20 }}
-                        className="fixed inset-x-0 top-[60px] z-40 bg-background/95 backdrop-blur-3xl border-b border-white/5 md:hidden shadow-2xl"
+                        className="fixed inset-x-0 top-[60px] z-40 bg-background/95 backdrop-blur-xl border-b border-white/5 md:hidden shadow-2xl"
                     >
                         <Container className="py-8 flex flex-col gap-2">
                             {navLinks.map((link, idx) => (

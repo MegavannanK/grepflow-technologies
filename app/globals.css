@@ -122,4 +122,20 @@ body {
     radial-gradient(at 100% 0%, rgba(249, 115, 22, 0.15) 0, transparent 50%);
   background-size: 200% 100%;
   animation: aurora 15s ease-in-out infinite alternate;
+
+  /* Mobile Optimization */
+  @media (max-width: 768px) {
+    animation: none;
+    background-size: 100% 100%;
+    filter: blur(40px);
+  }
+}
+
+/* Mobile Performance Overrides */
+@media (max-width: 768px) {
+  .backdrop-blur-3xl {
+    --tw-backdrop-blur: blur(24px);
+    -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+    backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+  }
 }

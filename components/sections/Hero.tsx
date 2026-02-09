@@ -9,10 +9,12 @@ export function Hero() {
     return (
         <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-background pt-16 md:pt-20">
             {/* Aurora Background */}
+            {/* Aurora Background */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute active-aurora inset-0 opacity-30 dark:opacity-20 mix-blend-soft-light filter blur-3xl"></div>
-                <div className="absolute -top-[40%] -left-[20%] w-[70%] h-[70%] rounded-full bg-primary/20 blur-[120px] animate-pulse" />
-                <div className="absolute top-[20%] -right-[20%] w-[60%] h-[60%] rounded-full bg-accent/20 blur-[120px] animate-pulse delay-1000" />
+                {/* Hide heavy pulse animations on mobile */}
+                <div className="hidden md:block absolute -top-[40%] -left-[20%] w-[70%] h-[70%] rounded-full bg-primary/20 blur-[120px] animate-pulse" />
+                <div className="hidden md:block absolute top-[20%] -right-[20%] w-[60%] h-[60%] rounded-full bg-accent/20 blur-[120px] animate-pulse delay-1000" />
             </div>
 
             <Container className="relative z-10">
